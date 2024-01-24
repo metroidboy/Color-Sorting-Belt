@@ -20,12 +20,12 @@ CRGB leds[NUM_LEDS];
 #define UPDATES_PER_SECOND 100
 
 // Calibration Values
-int redMin = 68; // Red minimum value
-int redMax = 205; // Red maximum value
-int greenMin = 112; // Green minimum value
-int greenMax = 247; // Green maximum value
-int blueMin = 77; // Blue minimum value
-int blueMax = 201; // Blue maximum value
+int redMin = 47; // Red minimum value
+int redMax = 127; // Red maximum value
+int greenMin = 77; // Green minimum value
+int greenMax = 154; // Green maximum value
+int blueMin = 52; // Blue minimum value
+int blueMax = 156; // Blue maximum value
 
 // Variables for final Color values
 int redValue;
@@ -126,7 +126,7 @@ void loop() {
     servo_motor.write(135);
     delay(500);
   }
-  else if (blueValue > greenValue && blueValue > redValue && blueValue > 200)
+  else if (blueValue > greenValue && blueValue > redValue && blueValue > 130)
   {
     //Blue
     LedColor(3);
@@ -134,7 +134,7 @@ void loop() {
     delay(2000);
     tempb += 1;
   }
-  else if (greenValue > blueValue && greenValue > redValue && greenValue > 230)
+  else if (greenValue > blueValue && greenValue > redValue && greenValue > 200)
   {
     //Green
     LedColor(2);
@@ -142,7 +142,7 @@ void loop() {
     delay(2000);
     tempg += 1;
   }
-  else if (redValue > blueValue && redValue > greenValue && redValue > 210)       
+  else if (redValue > blueValue && redValue > greenValue && redValue > 200)       
   {
     //Red
     LedColor(1);
@@ -150,7 +150,7 @@ void loop() {
     delay(2000);
     tempr += 1;
   }
-  else if (greenValue <= 230 && redValue <=220 && blueValue <= 200)
+  else if (greenValue <= 230 && redValue <=230 && blueValue <= 230)
   {
     //Black
     LedColor(0);
